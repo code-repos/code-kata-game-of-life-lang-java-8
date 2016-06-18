@@ -409,29 +409,6 @@ public class WorldTest
                     ? Stream.of(new Location(row,col))
                     : Stream.empty()))
             .collect(toList());
-
-//        rangeClosed(1, rows).boxed().flatMap(row ->
-//            rangeClosed(1, cols).boxed().map(col ->
-//                    grid[row][col]
-//                            ? new Location(row, col)
-//                            : null))
-//            .filter(Objects::nonNull);
-//
-//        rangeClosed(1, rows).boxed()
-//          .collect(reducing(new LinkedList<>(),
-//                            row ->  rangeClosed(1, cols).boxed()
-//                                      .collect(reducing(new LinkedList<>(),
-//                                                        col -> grid[row][col] ? Collections.singletonList(new Location(row,col)) : Collections.EMPTY_LIST,
-//                                                        (List<Location> l, List<Location>r) -> {l.addAll(r); return l; })),
-//                            (List<Location> l, List<Location>r) -> {l.addAll(r); return l; }));
-//
-//        rangeClosed(1, rows).boxed()
-//                .collect(reducing(Stream.empty(),
-//                        row ->  rangeClosed(1, cols).boxed()
-//                                .collect(reducing(Stream.empty(),
-//                                        col -> grid[row][col] ? Stream.of(new Location(row,col)) : Stream.empty(),
-//                                        (s1,s2)-> Stream.concat(s1,s2))),
-//                        (s1,s2)-> Stream.concat(s1,s2)));
     }
 
     public static Location location(int x, int y){
